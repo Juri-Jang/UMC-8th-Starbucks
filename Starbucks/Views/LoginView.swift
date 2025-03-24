@@ -10,19 +10,19 @@ import SwiftUI
 public struct LoginView: View{
     public var body: some View{
         VStack{
-            Spacer().frame(height: 40)
+            Spacer().frame(height: 104)
             
             mainTitleGroup
             
-            Spacer().frame(height: 70)
+            Spacer()
             
             middleGroup
             
-            Spacer().frame(height: 60)
+            Spacer()
             
             bottomGroup
             
-            Spacer().frame(height: 40)
+            Spacer()
         }
         .padding(.horizontal, 19)
     }
@@ -43,8 +43,7 @@ public struct LoginView: View{
             
                 Text("회원 서비스 이용을 위해 로그인 해주세요.")
                     .font(.mainTextMedium16)
-                    .foregroundStyle(Color("green01"))
-            
+                    .foregroundStyle(Color("gray01"))
         }.frame(maxWidth: .infinity, alignment: .leading)
             
     }
@@ -72,14 +71,15 @@ public struct LoginView: View{
                     Button(action: {
                         print("로그인 시도")
                     }){
-                        Text("로그인 하기")
-                            .font(.mainTextMedium16)
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 19)  // 좌우 여백 적용
-                            .frame(height:46)
-                            .frame(maxWidth: .infinity)
-                            .background(Color("green01"))
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                        ZStack {
+                            Text("로그인 하기")
+                                .font(.mainTextMedium16)
+                                .foregroundColor(.white)
+                                .frame(height:46)
+                                .frame(maxWidth: .infinity)
+                                .background(Color("green01"))
+                                .clipShape(RoundedRectangle(cornerRadius: 20))
+                        }
                 }
             }
         }

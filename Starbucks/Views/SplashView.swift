@@ -10,8 +10,10 @@ import SwiftUI
 public struct SplashView: View{
     public var body: some View{
         ZStack(alignment: .center){
-            Color.green.edgesIgnoringSafeArea(.all) //뒷배경 색상
+            Color("green01").edgesIgnoringSafeArea(.all) //뒷배경 색상
             Image(.starbucks)
+                .resizable()
+                .frame(width:168, height:168)
         }
     }
 }
