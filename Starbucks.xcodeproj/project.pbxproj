@@ -12,6 +12,14 @@
 		5C8CD62858905A6991DB6DD1 /* StarbucksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A613796A95A93232D997903C /* StarbucksApp.swift */; };
 		6D8E9003788DB4FF72BE54B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2B4C2F45C34367633359CA /* Assets.xcassets */; };
 		76D5FF2B9CC3995368A0A37A /* TuistAssets+Starbucks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300BF681C742CF2A6E2D61A5 /* TuistAssets+Starbucks.swift */; };
+		CB75522C2D9839A6003FF4C7 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB75522B2D9839A0003FF4C7 /* SignupModel.swift */; };
+		CB75522E2D9839F4003FF4C7 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB75522D2D9839EF003FF4C7 /* SignupViewModel.swift */; };
+		CB7552302D983BCC003FF4C7 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB75522F2D983BC7003FF4C7 /* SignupView.swift */; };
+		CB7552432D984A3A003FF4C7 /* AdPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7552422D984A39003FF4C7 /* AdPopupView.swift */; };
+		CB7552452D98536E003FF4C7 /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7552442D98536B003FF4C7 /* TabView.swift */; };
+		CB7552472D9869C0003FF4C7 /* OtherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7552462D9869BC003FF4C7 /* OtherViewModel.swift */; };
+		CB7552492D9869EE003FF4C7 /* OtherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7552482D9869EB003FF4C7 /* OtherView.swift */; };
+		CB7E9DF62D98E06E00F42F9C /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB7E9DF52D98E06400F42F9C /* CustomButtonView.swift */; };
 		CBB3A3B52D8FCD6C00AAC118 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CBB3A3B12D8FCD6C00AAC118 /* Pretendard-Regular.otf */; };
 		CBB3A3B62D8FCD6C00AAC118 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CBB3A3AC2D8FCD6C00AAC118 /* Pretendard-Bold.otf */; };
 		CBB3A3B72D8FCD6C00AAC118 /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CBB3A3B22D8FCD6C00AAC118 /* Pretendard-SemiBold.otf */; };
@@ -71,6 +79,14 @@
 		53305F3AA15D64BD75985E6F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A613796A95A93232D997903C /* StarbucksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarbucksApp.swift; sourceTree = "<group>"; };
 		C0AF9A8E77F4EB5960EDF4E1 /* StarbucksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarbucksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB75522B2D9839A0003FF4C7 /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
+		CB75522D2D9839EF003FF4C7 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		CB75522F2D983BC7003FF4C7 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		CB7552422D984A39003FF4C7 /* AdPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdPopupView.swift; sourceTree = "<group>"; };
+		CB7552442D98536B003FF4C7 /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		CB7552462D9869BC003FF4C7 /* OtherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherViewModel.swift; sourceTree = "<group>"; };
+		CB7552482D9869EB003FF4C7 /* OtherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherView.swift; sourceTree = "<group>"; };
+		CB7E9DF52D98E06400F42F9C /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		CBB3A3AA2D8FCD6C00AAC118 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		CBB3A3AB2D8FCD6C00AAC118 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
 		CBB3A3AC2D8FCD6C00AAC118 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
@@ -215,6 +231,7 @@
 		CBB3A3DC2D8FD10500AAC118 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CB75522B2D9839A0003FF4C7 /* SignupModel.swift */,
 				CBB3A3EA2D8FD18400AAC118 /* LoginModel.swift */,
 			);
 			path = Models;
@@ -223,6 +240,8 @@
 		CBB3A3E12D8FD12600AAC118 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CB7552462D9869BC003FF4C7 /* OtherViewModel.swift */,
+				CB75522D2D9839EF003FF4C7 /* SignupViewModel.swift */,
 				CBB3A3EC2D8FD1D400AAC118 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
@@ -231,6 +250,11 @@
 		CBB3A3E52D8FD12600AAC118 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB7E9DF52D98E06400F42F9C /* CustomButtonView.swift */,
+				CB7552482D9869EB003FF4C7 /* OtherView.swift */,
+				CB7552442D98536B003FF4C7 /* TabView.swift */,
+				CB7552422D984A39003FF4C7 /* AdPopupView.swift */,
+				CB75522F2D983BC7003FF4C7 /* SignupView.swift */,
 				CBB3A3F02D8FD20E00AAC118 /* SplashView.swift */,
 				CBB3A3EE2D8FD20B00AAC118 /* LoginView.swift */,
 			);
@@ -365,10 +389,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB7552302D983BCC003FF4C7 /* SignupView.swift in Sources */,
+				CB7552472D9869C0003FF4C7 /* OtherViewModel.swift in Sources */,
 				CBB3A3EB2D8FD18800AAC118 /* LoginModel.swift in Sources */,
+				CB7552432D984A3A003FF4C7 /* AdPopupView.swift in Sources */,
+				CB75522C2D9839A6003FF4C7 /* SignupModel.swift in Sources */,
+				CB7552452D98536E003FF4C7 /* TabView.swift in Sources */,
 				76D5FF2B9CC3995368A0A37A /* TuistAssets+Starbucks.swift in Sources */,
+				CB7552492D9869EE003FF4C7 /* OtherView.swift in Sources */,
 				3538065E38355B69A850ED67 /* TuistBundle+Starbucks.swift in Sources */,
 				CBB3A3F12D8FD21000AAC118 /* SplashView.swift in Sources */,
+				CB7E9DF62D98E06E00F42F9C /* CustomButtonView.swift in Sources */,
+				CB75522E2D9839F4003FF4C7 /* SignupViewModel.swift in Sources */,
 				CBB3A3BE2D8FCD6C00AAC118 /* Font.swift in Sources */,
 				D3A23C92BE35D685261E9247 /* ContentView.swift in Sources */,
 				5C8CD62858905A6991DB6DD1 /* StarbucksApp.swift in Sources */,

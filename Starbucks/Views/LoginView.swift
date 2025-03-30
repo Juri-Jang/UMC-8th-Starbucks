@@ -8,13 +8,22 @@
 import SwiftUI
 
 public struct LoginView: View{
+    @StateObject private var LoginviewModel = LoginViewModel()
+    @FocusState private var focusedField: Field?
+    
+    enum Field: Hashable {
+            case id
+            case password
+        }
+
     public var body: some View{
         VStack{
-            Spacer().frame(height: 104)
+            
+            Spacer().frame(height: 80)
             
             mainTitleGroup
             
-            Spacer()
+            Spacer().frame(height:50)
             
             middleGroup
             
@@ -23,6 +32,7 @@ public struct LoginView: View{
             bottomGroup
             
             Spacer()
+            
         }
         .padding(.horizontal, 19)
     }
@@ -50,21 +60,39 @@ public struct LoginView: View{
     
     //중간 그룹
     private var middleGroup: some View{
+        
         VStack{
-                Text("아이디")
+            Text("아이디")
                     .font(.mainTextRegular13)
                     .foregroundStyle(Color("gray05"))
                     .frame(maxWidth: .infinity, alignment: .leading)
+            TextField("", text: $LoginviewModel.id )
+                .focused($focusedField, equals: .id)
+                .overlay(
+                    Rectangle()
+                        .frame(height: 1) // 밑줄 높이
+                        .foregroundStyle(focusedField == .id ? Color("green01"): Color("gray00")) // 밑줄 색상 변경
+                        .padding(.top, 10), // 텍스트 필드와 밑줄 사이 간격 조정
+                    alignment: .bottom
+                )
+
+            Spacer().frame(height:40)
                 
-                Divider().foregroundStyle(Color("gray00"))
-                Spacer().frame(height:47)
-                
-                Text("비밀번호")
-                    .font(.mainTextRegular13)
-                    .foregroundStyle(Color("gray05"))
-                    .frame(maxWidth: .infinity, alignment: .leading)
+            Text("비밀번호")
+                .font(.mainTextRegular13)
+                .foregroundStyle(Color("gray05"))
+                .frame(maxWidth: .infinity, alignment: .leading)
+            SecureField("", text: $LoginviewModel.password)
+                .focused($focusedField, equals: .password)
+                .overlay(
+                    Rectangle()
+                        .frame(height: 1) // 밑줄 높이
+                        .foregroundStyle(focusedField == .password ? Color("green01"): Color("gray00")),
+                    alignment: .bottom
+                )
             
-                Divider().foregroundStyle(Color("gray00"))
+            
+            
                 Spacer().frame(height:47)
                 
                 ZStack{
@@ -105,13 +133,11 @@ public struct LoginView: View{
     }
 }
 
-//#Preview {
-//    LoginView()
-//}
 
 struct LoginView_Preview: PreviewProvider {
+
     static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
-    
+
     static var previews: some View {
         ForEach(devices, id: \.self) { device in
             LoginView()
