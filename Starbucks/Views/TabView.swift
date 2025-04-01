@@ -12,16 +12,39 @@ struct CustomTabView: View {
     
     var body: some View{
         TabView(selection: $selectedTab){
-            Tab("Home", systemImage: "house.fill", value: 0) {}
-            Tab("Pay", systemImage: "wallet.bifold", value: 1) {}
-            Tab("Order", systemImage: "cup.and.saucer", value: 2) {}
-            Tab("Shop", systemImage: "handbag.fill", value: 3) {}
-            Tab("Other", systemImage: "ellipsis", value: 4) {
-                OtherView()
-            }
+            Tab(value:0, content: {Text("home")},label:{
+                VStack{
+                    Image("home")
+                    Text("Home")
+                }
+            })
+            Tab(value:1, content: {Text("pay")},label:{
+                VStack{
+                    Image("pay")
+                    Text("Pay")
+                }
+            })
+            Tab(value:2, content: {Text("order")},label:{
+                VStack{
+                    Image("order")
+                    Text("Oder")
+                }
+            })
+            Tab(value:3, content: {Text("shop")},label:{
+                VStack{
+                    Image("shop")
+                    Text("shop")
+                }
+            })
+            Tab(value:4, content: {OtherView()},label:{
+                VStack{
+                    Image("other")
+                    Text("Other")
+                }
+            })
         }
-        .tint(Color("green02"))
         .background(Color("white"))
+        .tint(Color("green02"))
     }
 }
 

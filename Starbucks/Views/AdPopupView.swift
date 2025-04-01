@@ -14,7 +14,7 @@ struct AdPopupView: View {
         VStack{
             Image(.banner)
                 .resizable()
-                .frame(maxWidth: .infinity, maxHeight: 720)
+                .frame(maxWidth: .infinity, maxHeight: 720) 
             
             Spacer().frame(height: 106)
             
