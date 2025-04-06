@@ -12,6 +12,20 @@
 		5C8CD62858905A6991DB6DD1 /* StarbucksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A613796A95A93232D997903C /* StarbucksApp.swift */; };
 		6D8E9003788DB4FF72BE54B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2B4C2F45C34367633359CA /* Assets.xcassets */; };
 		76D5FF2B9CC3995368A0A37A /* TuistAssets+Starbucks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300BF681C742CF2A6E2D61A5 /* TuistAssets+Starbucks.swift */; };
+		CB1311782D9FCD3500A5EB16 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1311772D9FCD2700A5EB16 /* CustomNavigationBar.swift */; };
+		CB5999B72DA1039600E5000C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5999B62DA1039000E5000C /* HomeView.swift */; };
+		CB5999B92DA103D600E5000C /* RecoMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5999B82DA103D000E5000C /* RecoMenuModel.swift */; };
+		CB5999BB2DA103DE00E5000C /* RecoMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5999BA2DA103D900E5000C /* RecoMenuViewModel.swift */; };
+		CB5999BD2DA1090500E5000C /* StarGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5999BC2DA108F500E5000C /* StarGaugeView.swift */; };
+		CB599A052DA13D6800E5000C /* CircleImageCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB599A042DA13D5C00E5000C /* CircleImageCard.swift */; };
+		CB599A072DA1733C00E5000C /* AdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB599A062DA172EB00E5000C /* AdModel.swift */; };
+		CB599A092DA17A7C00E5000C /* AdViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB599A082DA17A6E00E5000C /* AdViewModel.swift */; };
+		CB599A0B2DA17D9E00E5000C /* AdCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB599A0A2DA17D8E00E5000C /* AdCard.swift */; };
+		CB599A0D2DA1839500E5000C /* DessertMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB599A0C2DA1838B00E5000C /* DessertMenuModel.swift */; };
+		CB599A0F2DA1846F00E5000C /* DessertMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB599A0E2DA1846400E5000C /* DessertMenuViewModel.swift */; };
+		CB599A142DA18E5E00E5000C /* MenuDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB599A132DA18E5700E5000C /* MenuDetailView.swift */; };
+		CB599A162DA18ECA00E5000C /* MenuDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB599A152DA18EA700E5000C /* MenuDetailModel.swift */; };
+		CB599A182DA18F3E00E5000C /* MenuDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB599A172DA18F3700E5000C /* MenuDetailViewModel.swift */; };
 		CB75522C2D9839A6003FF4C7 /* SignupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB75522B2D9839A0003FF4C7 /* SignupModel.swift */; };
 		CB75522E2D9839F4003FF4C7 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB75522D2D9839EF003FF4C7 /* SignupViewModel.swift */; };
 		CB7552302D983BCC003FF4C7 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB75522F2D983BC7003FF4C7 /* SignupView.swift */; };
@@ -79,6 +93,20 @@
 		53305F3AA15D64BD75985E6F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A613796A95A93232D997903C /* StarbucksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarbucksApp.swift; sourceTree = "<group>"; };
 		C0AF9A8E77F4EB5960EDF4E1 /* StarbucksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarbucksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB1311772D9FCD2700A5EB16 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		CB5999B62DA1039000E5000C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		CB5999B82DA103D000E5000C /* RecoMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoMenuModel.swift; sourceTree = "<group>"; };
+		CB5999BA2DA103D900E5000C /* RecoMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoMenuViewModel.swift; sourceTree = "<group>"; };
+		CB5999BC2DA108F500E5000C /* StarGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarGaugeView.swift; sourceTree = "<group>"; };
+		CB599A042DA13D5C00E5000C /* CircleImageCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageCard.swift; sourceTree = "<group>"; };
+		CB599A062DA172EB00E5000C /* AdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdModel.swift; sourceTree = "<group>"; };
+		CB599A082DA17A6E00E5000C /* AdViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdViewModel.swift; sourceTree = "<group>"; };
+		CB599A0A2DA17D8E00E5000C /* AdCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdCard.swift; sourceTree = "<group>"; };
+		CB599A0C2DA1838B00E5000C /* DessertMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertMenuModel.swift; sourceTree = "<group>"; };
+		CB599A0E2DA1846400E5000C /* DessertMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DessertMenuViewModel.swift; sourceTree = "<group>"; };
+		CB599A132DA18E5700E5000C /* MenuDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailView.swift; sourceTree = "<group>"; };
+		CB599A152DA18EA700E5000C /* MenuDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailModel.swift; sourceTree = "<group>"; };
+		CB599A172DA18F3700E5000C /* MenuDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewModel.swift; sourceTree = "<group>"; };
 		CB75522B2D9839A0003FF4C7 /* SignupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupModel.swift; sourceTree = "<group>"; };
 		CB75522D2D9839EF003FF4C7 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		CB75522F2D983BC7003FF4C7 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
@@ -231,6 +259,10 @@
 		CBB3A3DC2D8FD10500AAC118 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CB599A152DA18EA700E5000C /* MenuDetailModel.swift */,
+				CB599A0C2DA1838B00E5000C /* DessertMenuModel.swift */,
+				CB599A062DA172EB00E5000C /* AdModel.swift */,
+				CB5999B82DA103D000E5000C /* RecoMenuModel.swift */,
 				CB75522B2D9839A0003FF4C7 /* SignupModel.swift */,
 				CBB3A3EA2D8FD18400AAC118 /* LoginModel.swift */,
 			);
@@ -240,6 +272,10 @@
 		CBB3A3E12D8FD12600AAC118 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CB599A172DA18F3700E5000C /* MenuDetailViewModel.swift */,
+				CB599A0E2DA1846400E5000C /* DessertMenuViewModel.swift */,
+				CB599A082DA17A6E00E5000C /* AdViewModel.swift */,
+				CB5999BA2DA103D900E5000C /* RecoMenuViewModel.swift */,
 				CB7552462D9869BC003FF4C7 /* OtherViewModel.swift */,
 				CB75522D2D9839EF003FF4C7 /* SignupViewModel.swift */,
 				CBB3A3EC2D8FD1D400AAC118 /* LoginViewModel.swift */,
@@ -250,6 +286,12 @@
 		CBB3A3E52D8FD12600AAC118 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB599A132DA18E5700E5000C /* MenuDetailView.swift */,
+				CB599A0A2DA17D8E00E5000C /* AdCard.swift */,
+				CB599A042DA13D5C00E5000C /* CircleImageCard.swift */,
+				CB5999BC2DA108F500E5000C /* StarGaugeView.swift */,
+				CB5999B62DA1039000E5000C /* HomeView.swift */,
+				CB1311772D9FCD2700A5EB16 /* CustomNavigationBar.swift */,
 				CB7E9DF52D98E06400F42F9C /* CustomButtonView.swift */,
 				CB7552482D9869EB003FF4C7 /* OtherView.swift */,
 				CB7552442D98536B003FF4C7 /* TabView.swift */,
@@ -397,14 +439,28 @@
 				CB7552452D98536E003FF4C7 /* TabView.swift in Sources */,
 				76D5FF2B9CC3995368A0A37A /* TuistAssets+Starbucks.swift in Sources */,
 				CB7552492D9869EE003FF4C7 /* OtherView.swift in Sources */,
+				CB5999B92DA103D600E5000C /* RecoMenuModel.swift in Sources */,
+				CB599A182DA18F3E00E5000C /* MenuDetailViewModel.swift in Sources */,
 				3538065E38355B69A850ED67 /* TuistBundle+Starbucks.swift in Sources */,
+				CB5999BD2DA1090500E5000C /* StarGaugeView.swift in Sources */,
+				CB5999B72DA1039600E5000C /* HomeView.swift in Sources */,
+				CB599A142DA18E5E00E5000C /* MenuDetailView.swift in Sources */,
+				CB599A0F2DA1846F00E5000C /* DessertMenuViewModel.swift in Sources */,
 				CBB3A3F12D8FD21000AAC118 /* SplashView.swift in Sources */,
+				CB599A052DA13D6800E5000C /* CircleImageCard.swift in Sources */,
+				CB599A072DA1733C00E5000C /* AdModel.swift in Sources */,
+				CB599A092DA17A7C00E5000C /* AdViewModel.swift in Sources */,
 				CB7E9DF62D98E06E00F42F9C /* CustomButtonView.swift in Sources */,
 				CB75522E2D9839F4003FF4C7 /* SignupViewModel.swift in Sources */,
+				CB1311782D9FCD3500A5EB16 /* CustomNavigationBar.swift in Sources */,
+				CB599A162DA18ECA00E5000C /* MenuDetailModel.swift in Sources */,
+				CB599A0D2DA1839500E5000C /* DessertMenuModel.swift in Sources */,
 				CBB3A3BE2D8FCD6C00AAC118 /* Font.swift in Sources */,
+				CB5999BB2DA103DE00E5000C /* RecoMenuViewModel.swift in Sources */,
 				D3A23C92BE35D685261E9247 /* ContentView.swift in Sources */,
 				5C8CD62858905A6991DB6DD1 /* StarbucksApp.swift in Sources */,
 				CBB3A3EF2D8FD20C00AAC118 /* LoginView.swift in Sources */,
+				CB599A0B2DA17D9E00E5000C /* AdCard.swift in Sources */,
 				CBB3A3ED2D8FD1D500AAC118 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

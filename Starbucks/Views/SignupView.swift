@@ -8,6 +8,7 @@
 import SwiftUI
 
 public struct SignupView: View{
+    @Environment(\.dismiss) var dismiss
     @StateObject private var signupViewModel = SignupViewModel()
     @FocusState private var focusedField: Field?
     
@@ -18,14 +19,26 @@ public struct SignupView: View{
         }
     
     public var body: some View{
-        VStack{
-            Spacer()
-            signupGroup
-            Spacer().frame(height: 328)
-            signupButton
-            Spacer().frame(height: 72)
+        NavigationStack{
+            VStack{
+                CustomNavigationBar(
+                title: "가입하기",
+                showBackButton: true,
+                onBack: {
+                    dismiss()
+                }
+            )
+                Spacer()
+                signupGroup
+                Spacer().frame(height: 328)
+                signupButton
+                Spacer().frame(height: 72)
+            }
+            .padding(.horizontal, 19)
+            .navigationBarBackButtonHidden(true) //시스템 뒤로가기 버튼 숨기기
         }
-        .padding(.horizontal, 19)
+        
+            
     }
     
     private var signupGroup: some View{
@@ -66,9 +79,15 @@ public struct SignupView: View{
     private var signupButton: some View{
         ZStack{
             Button(action: {
-                signupViewModel.saveUserData()
-                print("생성")
-            }){
+                if(!signupViewModel.nickname.isEmpty &&
+                   !signupViewModel.email.isEmpty && !signupViewModel.password.isEmpty){
+                    signupViewModel.saveUserData()
+                    print("생성")
+                    dismiss()
+                }else{
+                    print("입력하지 않은 항목이 있습니다.")
+                }
+                            }){
                 ZStack {
                     Text("생성하기")
                         .font(.mainTextMedium16)

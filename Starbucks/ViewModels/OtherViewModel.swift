@@ -8,5 +8,4 @@
 import SwiftUI
 
 class OtherViewModel: ObservableObject{
-    //닉네임 작성
 }

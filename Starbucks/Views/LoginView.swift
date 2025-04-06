@@ -10,6 +10,7 @@ import SwiftUI
 public struct LoginView: View{
     @StateObject private var LoginviewModel = LoginViewModel()
     @FocusState private var focusedField: Field?
+    @Binding var isLoginSuccess: Bool
     
     enum Field: Hashable {
             case id
@@ -17,25 +18,23 @@ public struct LoginView: View{
         }
 
     public var body: some View{
-        VStack{
-            
-            Spacer().frame(height: 80)
-            
-            mainTitleGroup
-            
-            Spacer().frame(height:50)
-            
-            middleGroup
-            
-            Spacer()
-            
-            bottomGroup
-            
-            Spacer()
-            
+        NavigationStack {
+            VStack {
+                Spacer().frame(height: 80)
+                mainTitleGroup
+                Spacer().frame(height: 50)
+                middleGroup
+                Spacer()
+                bottomGroup
+                Spacer()
+            }
+            .padding(.horizontal, 19)
+            .navigationDestination(isPresented: $isLoginSuccess) {
+                CustomTabView(isLoginSuccess: $isLoginSuccess)
+            }
         }
-        .padding(.horizontal, 19)
     }
+    
     
     //상단 그룹
     private var mainTitleGroup: some View{
@@ -60,19 +59,18 @@ public struct LoginView: View{
     
     //중간 그룹
     private var middleGroup: some View{
-        
         VStack{
             Text("아이디")
                     .font(.mainTextRegular13)
                     .foregroundStyle(Color("gray05"))
                     .frame(maxWidth: .infinity, alignment: .leading)
-            TextField("", text: $LoginviewModel.id )
+            TextField("", text: $LoginviewModel.email )
                 .focused($focusedField, equals: .id)
                 .overlay(
                     Rectangle()
-                        .frame(height: 1) // 밑줄 높이
-                        .foregroundStyle(focusedField == .id ? Color("green01"): Color("gray00")) // 밑줄 색상 변경
-                        .padding(.top, 10), // 텍스트 필드와 밑줄 사이 간격 조정
+                        .frame(height: 1)
+                        .foregroundStyle(focusedField == .id ? Color("green01"): Color("gray00"))
+                        .padding(.top, 10), 
                     alignment: .bottom
                 )
 
@@ -95,39 +93,47 @@ public struct LoginView: View{
             
                 Spacer().frame(height:47)
                 
-                ZStack{
-                    Button(action: {
-                        print("로그인 시도")
-                    }){
-                        ZStack {
-                            Text("로그인 하기")
-                                .font(.mainTextMedium16)
-                                .foregroundColor(.white)
-                                .frame(height:46)
-                                .frame(maxWidth: .infinity)
-                                .background(Color("green01"))
-                                .clipShape(RoundedRectangle(cornerRadius: 20))
-                        }
+            ZStack {
+                Button(action: {
+                    print("로그인 시도")
+                    if LoginviewModel.loginSuccess() {
+                        isLoginSuccess = true
+                        print("로그인 성공")
+                    } else {
+                        print("로그인 실패")
+                    }
+                }) {
+                    Text("로그인 하기")
+                        .font(.mainTextMedium16)
+                        .foregroundColor(.white)
+                        .frame(height: 46)
+                        .frame(maxWidth: .infinity)
+                        .background(Color("green01"))
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
                 }
+                
             }
+
         }
     }
     
     //하단 그룹
     private var bottomGroup: some View{
         VStack{
+            NavigationLink(destination: SignupView()){
                 Text("이메일로 회원가입하기")
                     .font(.mainTextRegular12)
                     .foregroundStyle(Color("gray04"))
                     .underline()
+            }
+
+            Spacer().frame(height: 19)
                 
-                Spacer().frame(height: 19)
+            Image(.kakaoLogin)
                 
-                Image(.kakaoLogin)
+            Spacer().frame(height: 19)
                 
-                Spacer().frame(height: 19)
-                
-                Image(.appleLogin)
+            Image(.appleLogin)
                    
         }
     }
@@ -137,10 +143,12 @@ public struct LoginView: View{
 struct LoginView_Preview: PreviewProvider {
 
     static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
-
+    
+    @State static var isLogin = true
+    
     static var previews: some View {
         ForEach(devices, id: \.self) { device in
-            LoginView()
+            LoginView(isLoginSuccess: $isLogin)
                 .previewDevice(PreviewDevice(rawValue: device))
                 .previewDisplayName(device)
         }

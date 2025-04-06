@@ -8,6 +8,14 @@
 import SwiftUI
 
 class LoginViewModel: ObservableObject {
-    @Published var id: String = ""
+    @Published var email: String = ""
     @Published var password: String = ""
+    
+    @AppStorage("email") private var storedEmail: String = ""
+    @AppStorage("password") private var storedPassword: String = ""
+
+    func loginSuccess() -> Bool{
+        guard !email.isEmpty, !password.isEmpty else { return false }
+        return email == storedEmail && password == storedPassword
+    }
 }

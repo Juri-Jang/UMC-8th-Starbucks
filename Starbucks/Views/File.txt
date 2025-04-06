@@ -1,0 +1,39 @@
+var body: some View {
+    NavigationStack {
+        TabView(selection: $selectedTab) {
+            Tab(value: 0, content: { HomeView() }, label: {
+                VStack {
+                    Image("home")
+                    Text("Home")
+                }
+            })
+            Tab(value: 1, content: { Text("pay") }, label: {
+                VStack {
+                    Image("pay")
+                    Text("Pay")
+                }
+            })
+            Tab(value: 2, content: { Text("order") }, label: {
+                VStack {
+                    Image("order")
+                    Text("Order")
+                }
+            })
+            Tab(value: 3, content: { Text("shop") }, label: {
+                VStack {
+                    Image("shop")
+                    Text("Shop")
+                }
+            })
+            Tab(value: 4, content: { OtherView() }, label: {
+                VStack {
+                    Image("other")
+                    Text("Other")
+                }
+            })
+        }
+        .background(Color("white"))
+        .tint(Color("green02"))
+        .navigationBarBackButtonHidden(true) // 여기!
+    }
+}

@@ -8,29 +8,33 @@
 import SwiftUI
 
 struct OtherView: View{
+    @Binding var isLoginSuccess: Bool
     @StateObject private var signupViewModel = SignupViewModel()
     
-    var body: some View{
-        ZStack{
-            Color.white.ignoresSafeArea()
-            VStack{
-                TopGroup
-                Group{
-                    Spacer().frame(height: 41)
-                    TextGoup
-                    Spacer().frame(height: 21)
-                    MainbuttonGroup
-                    Spacer().frame(height: 41)
-                    PayGroup
-                    Spacer().frame(height: 41)
-                    CustomerGroup
-                    Spacer().frame(height: 57)
+    var body: some View {
+        NavigationStack {
+            ZStack {
+                Color.white.ignoresSafeArea()
+                VStack {
+                    TopGroup
+                    Group {
+                        Spacer().frame(height: 41)
+                        TextGoup
+                        Spacer().frame(height: 21)
+                        MainbuttonGroup
+                        Spacer().frame(height: 41)
+                        PayGroup
+                        Spacer().frame(height: 41)
+                        CustomerGroup
+                        Spacer().frame(height: 57)
+                    }
                 }
+                .background(Color("white01"))
             }
-            .background(Color("white01"))
+            .navigationBarBackButtonHidden(true) // 여기 적용!
         }
-        
     }
+
     
     private var TopGroup: some View{
         HStack{
@@ -39,6 +43,8 @@ struct OtherView: View{
                 .padding(.trailing, 23.5)
             Spacer().frame(width: 200)
             Button(action: {
+                isLoginSuccess = false
+                print("로그인 여부 : \(isLoginSuccess)")
                 print("로그아웃")
             }) {
                 Image("logout")
@@ -135,10 +141,11 @@ struct OtherView: View{
 struct OtherView_Preview: PreviewProvider {
 
     static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
-
+    @State static var isLogin = true
+    
     static var previews: some View {
         ForEach(devices, id: \.self) { device in
-            OtherView()
+            OtherView(isLoginSuccess: $isLogin)
                 .previewDevice(PreviewDevice(rawValue: device))
                 .previewDisplayName(device)
         }
