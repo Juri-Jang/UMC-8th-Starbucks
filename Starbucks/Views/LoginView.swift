@@ -10,7 +10,7 @@ import SwiftUI
 public struct LoginView: View{
     @StateObject private var LoginviewModel = LoginViewModel()
     @FocusState private var focusedField: Field?
-    @Binding var isLoginSuccess: Bool
+    @AppStorage("isLogin") private var isLoginSuccess = false
     
     enum Field: Hashable {
             case id
@@ -30,7 +30,7 @@ public struct LoginView: View{
             }
             .padding(.horizontal, 19)
             .navigationDestination(isPresented: $isLoginSuccess) {
-                CustomTabView(isLoginSuccess: $isLoginSuccess)
+                CustomTabView()
             }
         }
     }
@@ -143,12 +143,10 @@ public struct LoginView: View{
 struct LoginView_Preview: PreviewProvider {
 
     static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
-    
-    @State static var isLogin = true
-    
+        
     static var previews: some View {
         ForEach(devices, id: \.self) { device in
-            LoginView(isLoginSuccess: $isLogin)
+            LoginView()
                 .previewDevice(PreviewDevice(rawValue: device))
                 .previewDisplayName(device)
         }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CustomTabView: View {
         @State var selectedTab : Int = 0
-        @Binding var isLoginSuccess: Bool
+        @AppStorage("isLogin") private var isLoginSuccess = false
         
         var body: some View {
             NavigationStack {
@@ -47,7 +47,7 @@ struct CustomTabView: View {
                 }
                 .background(Color("white"))
                 .tint(Color("green02"))
-                .navigationBarBackButtonHidden(true) // 여기!
+                .navigationBarBackButtonHidden(true)
             }
         }
 
@@ -56,11 +56,11 @@ struct CustomTabView: View {
     struct CustomTabView_Preview: PreviewProvider {
 
         static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
-        @State static var isLogin = true
+        
         
         static var previews: some View {
             ForEach(devices, id: \.self) { device in
-                CustomTabView(isLoginSuccess: $isLogin)
+                CustomTabView()
                     .previewDevice(PreviewDevice(rawValue: device))
                     .previewDisplayName(device)
             }

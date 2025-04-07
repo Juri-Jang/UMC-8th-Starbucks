@@ -2,14 +2,14 @@ import SwiftUI
 
 @main
 struct StarbucksApp: App {
-    @State private var isLoginSuccess = false
+    @AppStorage("isLogin") private var isLoginSuccess = false
     
     var body: some Scene {
         WindowGroup {
             if isLoginSuccess {
-                CustomTabView(isLoginSuccess: $isLoginSuccess)
+                CustomTabView()
             } else {
-                LoginView(isLoginSuccess: $isLoginSuccess)
+                LoginView()
             }
         }
     }

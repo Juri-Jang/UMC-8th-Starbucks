@@ -32,8 +32,6 @@ struct HomeView: View{
                     dessertMenu
                     imageBottomGroup
                 }
-                
-                
             }
         }
     }

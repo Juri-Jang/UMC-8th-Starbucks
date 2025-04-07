@@ -5,7 +5,6 @@
 //  Created by 장주리 on 4/6/25.
 //
 
-import Foundation
 import SwiftUI
 
 struct MenuDetailModel: Identifiable {
@@ -16,6 +15,27 @@ struct MenuDetailModel: Identifiable {
     let menuDescription: String
     let price: String
     let option: CoffeeOption
+    let defaultOption: CoffeeOption
+    
+    init(menuImage: Image, menuKorName: String, menuEngName: String, menuDescription: String, price: String, option: CoffeeOption) {
+        self.menuImage = menuImage
+        self.menuKorName = menuKorName
+        self.menuEngName = menuEngName
+        self.menuDescription = menuDescription
+        self.price = price
+        self.option = option
+        
+        switch option {
+        case .hotOnly:
+            self.defaultOption = .hotOnly
+        case .icedOnly:
+            self.defaultOption = .icedOnly
+        case .hot:
+            self.defaultOption = .hot
+        case .iced:
+            self.defaultOption = .iced
+        }
+    }
 }
 
 enum CoffeeOption: String {
@@ -24,6 +44,7 @@ enum CoffeeOption: String {
     case hotOnly = "HOT ONLY"
     case icedOnly = "ICED ONLY"
     
+    // 선택 가능한 옵션 배열
     var availableOptions: [Self] {
         switch self {
         case .hotOnly:
@@ -35,7 +56,6 @@ enum CoffeeOption: String {
         }
     }
     
-    // 텍스트 색상
     var textColor: Color {
         switch self {
         case .hot, .hotOnly:
@@ -45,5 +65,6 @@ enum CoffeeOption: String {
         }
     }
 }
+
 
 
