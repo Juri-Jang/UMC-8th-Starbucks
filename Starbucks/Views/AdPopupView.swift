@@ -14,9 +14,9 @@ struct AdPopupView: View {
         VStack{
             Image(.banner)
                 .resizable()
-                .frame(maxWidth: .infinity, maxHeight: 720) 
+                .frame(maxWidth: .infinity, maxHeight: 720)
             
-            Spacer().frame(height: 106)
+            Spacer().frame(height: 80)
             
             //자세히보기 버튼
             Button(action: {
@@ -32,7 +32,6 @@ struct AdPopupView: View {
                     }
                 })
                 .padding(.horizontal, 18)
-           
                 
             Spacer().frame(height: 19)
                 
@@ -48,7 +47,6 @@ struct AdPopupView: View {
                 )}
                 .padding(.bottom, 36)
                 .padding(.trailing, 37)
-            
         }
     }
 }

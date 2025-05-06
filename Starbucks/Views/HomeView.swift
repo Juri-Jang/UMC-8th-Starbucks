@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeView: View{
     @State private var curruntStar: Int = 2
+    @State private var showAdPopup: Bool = false; //광고 팝업 상태
+    @State private var isFirstLoad = true // 처음 로드 여부 추적
     private var recoViewModel = RecoMenuViewModel()
     private var adViewModel = AdViewModel()
     private var dessertViewModel = DessertMenuViewModel()
@@ -33,6 +35,16 @@ struct HomeView: View{
                     imageBottomGroup
                 }
             }
+            .onAppear{
+                    showAdPopup = true
+                    
+            }
+            .onDisappear{
+                showAdPopup = false // 뷰가 사라질 때 광고 팝업 상태 초기화
+            }
+            .sheet(isPresented: $showAdPopup, content: {
+                AdPopupView()//광고 팝업 연결
+            })
         }
     }
     

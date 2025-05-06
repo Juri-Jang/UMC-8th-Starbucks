@@ -9,15 +9,15 @@ import SwiftUI
 import PhotosUI
 
 struct ImagePicker: UIViewControllerRepresentable {
+    @Environment(\.dismiss) var dismiss
     @Binding var selectedImage: UIImage?
-
     func makeCoordinator() -> Coordinator {
         Coordinator(parent: self)
     }
 
     func makeUIViewController(context: Context) -> PHPickerViewController {
         var config = PHPickerConfiguration(photoLibrary: PHPhotoLibrary.shared())
-        config.selectionLimit = 1
+        config.selectionLimit = 1 //선택 개수
         config.filter = .images
         let picker = PHPickerViewController(configuration: config)
         picker.delegate = context.coordinator

@@ -16,7 +16,7 @@ struct OtherView: View{
             ZStack {
                 Color.white.ignoresSafeArea()
                 VStack {
-                    TopGroup
+                    navigationBar
                     Group {
                         Spacer().frame(height: 41)
                         TextGoup
@@ -31,12 +31,12 @@ struct OtherView: View{
                 }
                 .background(Color("white01"))
             }
-            .navigationBarBackButtonHidden(true) // 여기 적용!
+            .navigationBarBackButtonHidden(true)
         }
     }
 
     
-    private var TopGroup: some View{
+    private var navigationBar: some View{
         HStack{
             Text("Other")
                 .font(.mainTextBold24)
@@ -75,7 +75,11 @@ struct OtherView: View{
     private var MainbuttonGroup: some View{
         HStack(spacing: 10.5) {
             MainButton(buttonText: "별 히스토리", imageName: "star") { print("별 히스토리")}
-            MainButton(buttonText: "전자 영수증", imageName: "bill") {print("전자 영수증")}
+            
+            NavigationLink(destination: EReciptView()) {
+                        MainButton(buttonText: "전자 영수증", imageName: "bill")
+                    }
+            
             MainButton(buttonText: "나만의 메뉴", imageName: "menu") {print("나만의 메뉴")}
         }
     }

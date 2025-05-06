@@ -26,13 +26,13 @@ struct CustomTabView: View {
                             Text("Pay")
                         }
                     })
-                    Tab(value: 2, content: { Text("order") }, label: {
+                    Tab(value: 2, content: { OrderView() }, label: {
                         VStack {
                             Image("order")
                             Text("Order")
                         }
                     })
-                    Tab(value: 3, content: { Text("shop") }, label: {
+                    Tab(value: 3, content: { ShopView() }, label: {
                         VStack {
                             Image("shop")
                             Text("Shop")
