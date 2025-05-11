@@ -111,34 +111,47 @@ struct OtherView: View{
         }
     }
     
-    private var CustomerGroup: some View{
-        VStack{
+    private var CustomerGroup: some View {
+        VStack {
             Text("고객지원")
                 .font(.mainTextSemiBold18)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.horizontal,10)
+                .padding(.horizontal, 10)
+            
             Spacer().frame(height: 24)
-            Group{
-                HStack{
-                    CustomerButton(buttonText: "스토어 케어",imageName:"store_care"){print("스토어 케어")}
-                    Spacer()
-                    CustomerButton(buttonText: "고객의 소리",imageName:"customer"){print("고객의 소리")}
+            
+            HStack {
+                CustomerButton(buttonText: "스토어 케어", imageName: "store_care") {
+                    print("스토어 케어")
                 }
-                Spacer().frame(height: 32)
-                HStack{
-                    CustomerButton(buttonText: "매장 정보",imageName:"store_info"){print("매장 정보")}
-                    Spacer()
-                    CustomerButton(buttonText: "반납기 정보",imageName:"return_info"){print("반납기 정보")}
-                }
-                Spacer().frame(height: 32)
-                HStack{
-                    CustomerButton(buttonText: "마이 스타벅스 리뷰",imageName:"my_review"){print("마이 스타벅스 리뷰")
-                    }
-                    Spacer()
+                Spacer()
+                CustomerButton(buttonText: "고객의 소리", imageName: "customer") {
+                    print("고객의 소리")
                 }
             }
-            .padding(.horizontal, 11)
+            
+            Spacer().frame(height: 32)
+            
+            HStack {
+                NavigationLink(destination: SearchStoreView(storeViewModel: StoreViewModel())) {
+                    CustomerButton(buttonText: "매장 정보", imageName: "store_info"){print("매장정보")}
+                }
+                Spacer()
+                CustomerButton(buttonText: "반납기 정보", imageName: "return_info") {
+                    print("반납기 정보")
+                }
+            }
+            
+            Spacer().frame(height: 32)
+            
+            HStack {
+                CustomerButton(buttonText: "마이 스타벅스 리뷰", imageName: "my_review") {
+                    print("마이 스타벅스 리뷰")
+                }
+                Spacer()
+            }
         }
+        .padding(.horizontal, 11)
     }
 }
 

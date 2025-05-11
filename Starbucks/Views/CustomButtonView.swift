@@ -10,10 +10,12 @@ import SwiftUI
 struct MainButton: View {
     var buttonText: String
     var imageName: String
-    var action: () -> Void
+    var action: (() -> Void)? = nil
     
     var body: some View {
-        Button(action: action) {
+        Button(action: {
+            action?()
+        }) {
             VStack {
                 Image(imageName)
                     .resizable()
@@ -25,14 +27,16 @@ struct MainButton: View {
             }
             .padding(.vertical, 19)
             .frame(width: 102, height: 108)
-            .background(RoundedRectangle(cornerRadius: 12)
-                .fill(Color.white)
-                .shadow(color: Color.black.opacity(0.10), radius: 5, x: 0, y: 0) 
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .fill(Color.white)
+                    .shadow(color: Color.black.opacity(0.10), radius: 5, x: 0, y: 0)
             )
         }
-        
+        .disabled(action == nil) 
     }
 }
+
 
 struct CustomerButton: View{
     var buttonText: String

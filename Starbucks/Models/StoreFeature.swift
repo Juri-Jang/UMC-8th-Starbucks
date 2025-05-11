@@ -6,38 +6,36 @@
 //
 
 import Foundation
-import CoreLocation
 
 struct StoreFeatureCollection: Codable {
-    let features: [StoreFeature]
+    var type: String
+    var name: String
+    var features: [StoreFeature]
+    
 }
 
-struct StoreFeature: Codable, Identifiable {
-    var id = UUID()
-    let properties: StoreProperties
-    let geometry: StoreGeometry
-}
+struct StoreFeature: Codable, Equatable {
+    var type: String
+    var properties: StoreProperties
+    var geometry: StoreGeometry
 
-struct StoreProperties: Codable {
-    let seq: String
-    let storeName: String
-    let address: String
-    let telephone: String
-    let category: String
-    let yCoordinate: Double
-    let xCoordinate: Double
-
-    enum CodingKeys: String, CodingKey {
-        case seq = "Seq"
-        case storeName = "Sotre_nm"
-        case address = "Address"
-        case telephone = "Telephone"
-        case category = "Category"
-        case yCoordinate = "Ycoordinate"
-        case xCoordinate = "Xcoordinate"
+    static func == (lhs: StoreFeature, rhs: StoreFeature) -> Bool {
+        // Store를 구별할 수 있는 유일한 속성(예: Seq 또는 X/Y좌표 등)을 기준으로 비교
+        return lhs.properties.Seq == rhs.properties.Seq
     }
 }
 
+struct StoreProperties: Codable {
+    var Seq: String
+    var Sotre_nm: String
+    var Address: String
+    var Telephone: String
+    var Category: String
+    var Ycoordinate: Double
+    var Xcoordinate: Double
+}
+
 struct StoreGeometry: Codable {
-    let coordinates: [Double]
+    var type: String
+    var coordinates: [Double]
 }
