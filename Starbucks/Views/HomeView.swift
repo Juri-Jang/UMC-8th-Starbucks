@@ -11,11 +11,21 @@ struct HomeView: View{
     @State private var curruntStar: Int = 2
     @State private var showAdPopup: Bool = false; //광고 팝업 상태
     @State private var isFirstLoad = true // 처음 로드 여부 추적
+
     private var recoViewModel = RecoMenuViewModel()
     private var adViewModel = AdViewModel()
     private var dessertViewModel = DessertMenuViewModel()
     private var detailViewModel = MenuDetailViewModel()
+    private var otherViewModel = OtherViewModel()
     
+    @Binding var isLoginSuccess: Bool
+    var email: String
+    
+    public init(isLoginSuccess: Binding<Bool>, email: String) {
+            _isLoginSuccess = isLoginSuccess
+            self.email = email
+    }
+
     public var body : some View{
         NavigationStack{
             ScrollView(.vertical){
@@ -36,7 +46,12 @@ struct HomeView: View{
                 }
             }
             .onAppear{
-                    showAdPopup = true
+                showAdPopup = true
+                if !email.isEmpty {
+                    otherViewModel.getNickname(email: email)
+                } else {
+                    otherViewModel.nickname = "작성한 닉네임"
+                }
                     
             }
             .onDisappear{
@@ -106,7 +121,7 @@ struct HomeView: View{
     private var recommendMenu: some View {
         VStack{
             HStack{
-                Text(recoViewModel.storedNickname != "" ? "\(recoViewModel.storedNickname)" : "설정 닉네임")
+                Text(otherViewModel.nickname.isEmpty ? "(설정한 닉네임)" : otherViewModel.nickname)
                     .font(.mainTextBold24)
                     .foregroundStyle(Color("brown01"))
                 Text("님을 위한 추천 메뉴")
@@ -190,16 +205,16 @@ struct HomeView: View{
 }
 
 
-struct HomeView_Preview: PreviewProvider {
-
-    static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
-        
-    static var previews: some View {
-        ForEach(devices, id: \.self) { device in
-            HomeView()
-                .previewDevice(PreviewDevice(rawValue: device))
-                .previewDisplayName(device)
-        }
-    }
-}
-
+//struct HomeView_Preview: PreviewProvider {
+//
+//    static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
+//        
+//    static var previews: some View {
+//        ForEach(devices, id: \.self) { device in
+//            HomeView()
+//                .previewDevice(PreviewDevice(rawValue: device))
+//                .previewDisplayName(device)
+//        }
+//    }
+//}
+//

@@ -7,5 +7,13 @@
 
 import SwiftUI
 
-class OtherViewModel: ObservableObject{
+class OtherViewModel: ObservableObject {
+    @Published var nickname: String = ""
+
+    func getNickname(email: String) {
+        let nickname = KeychainService.shared.load(account: KeyChainKey.email, service: KeyChainKey.service) ?? ""
+        self.nickname = nickname
+    }
 }
+
+

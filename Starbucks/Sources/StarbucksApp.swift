@@ -1,15 +1,23 @@
 import SwiftUI
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
 
 @main
 struct StarbucksApp: App {
-    @AppStorage("isLogin") private var isLoginSuccess = false
+    @StateObject private var authViewModel = AuthViewModel()
     
+    init() {
+        KakaoSDK.initSDK(appKey: Config.appKey)
+    }
+
     var body: some Scene {
+        
         WindowGroup {
-            if isLoginSuccess {
-                CustomTabView()
+            if authViewModel.isLoginSuccess {
+                CustomTabView(isLoginSuccess: $authViewModel.isLoginSuccess, email: authViewModel.userEmail)
             } else {
-                LoginView()
+                LoginView(isLoginSuccess: $authViewModel.isLoginSuccess, userEmail: $authViewModel.userEmail)
             }
         }
     }

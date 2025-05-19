@@ -13,6 +13,8 @@
 		6D8E9003788DB4FF72BE54B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC2B4C2F45C34367633359CA /* Assets.xcassets */; };
 		76D5FF2B9CC3995368A0A37A /* TuistAssets+Starbucks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300BF681C742CF2A6E2D61A5 /* TuistAssets+Starbucks.swift */; };
 		CB1311782D9FCD3500A5EB16 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1311772D9FCD2700A5EB16 /* CustomNavigationBar.swift */; };
+		CB2DD8B02DDB3FD3007D7A67 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2DD8AF2DDB3FD1007D7A67 /* Config.swift */; };
+		CB2DD8B22DDB40E7007D7A67 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = CB2DD8B12DDB40E0007D7A67 /* .gitignore */; };
 		CB5999B72DA1039600E5000C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5999B62DA1039000E5000C /* HomeView.swift */; };
 		CB5999B92DA103D600E5000C /* RecoMenuModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5999B82DA103D000E5000C /* RecoMenuModel.swift */; };
 		CB5999BB2DA103DE00E5000C /* RecoMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5999BA2DA103D900E5000C /* RecoMenuViewModel.swift */; };
@@ -49,6 +51,13 @@
 		CB9844872DBFB0F900203980 /* AllProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9844862DBFB0F400203980 /* AllProductViewModel.swift */; };
 		CB9844892DBFDBC900203980 /* BestItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9844882DBFDBC100203980 /* BestItemModel.swift */; };
 		CB98448B2DBFDBE100203980 /* BestItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB98448A2DBFDBDE00203980 /* BestItemViewModel.swift */; };
+		CBAA0D1E2DD9D93400B80E7C /* KeyChainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAA0D1D2DD9D93100B80E7C /* KeyChainKey.swift */; };
+		CBAA0D202DD9E30300B80E7C /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAA0D1F2DD9E2FD00B80E7C /* AuthViewModel.swift */; };
+		CBAA0D242DDA195400B80E7C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CBAA0D232DDA195400B80E7C /* Alamofire */; };
+		CBAA0D272DDA1CDA00B80E7C /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = CBAA0D262DDA1CDA00B80E7C /* KakaoSDKCommon */; };
+		CBAA0D292DDA1CEF00B80E7C /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CBAA0D282DDA1CEF00B80E7C /* KakaoSDKAuth */; };
+		CBAA0D2B2DDA1CEF00B80E7C /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = CBAA0D2A2DDA1CEF00B80E7C /* KakaoSDKUser */; };
+		CBAA0D2D2DDA4D0C00B80E7C /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAA0D2C2DDA4D0600B80E7C /* LoginResponse.swift */; };
 		CBAAF5CD2DC1281A00F3CDAA /* EReciptView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBAAF5CC2DC127D500F3CDAA /* EReciptView.swift */; };
 		CBB3A3B52D8FCD6C00AAC118 /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = CBB3A3B12D8FCD6C00AAC118 /* Pretendard-Regular.otf */; };
 		CBB3A3B62D8FCD6C00AAC118 /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = CBB3A3AC2D8FCD6C00AAC118 /* Pretendard-Bold.otf */; };
@@ -75,6 +84,7 @@
 		CBE0D6A12DC3D61A00286BAC /* PerformOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE0D6A02DC3D61200286BAC /* PerformOCR.swift */; };
 		CBE6F58E2DC0C5A400AB1F50 /* NewProductsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE6F58D2DC0C59F00AB1F50 /* NewProductsModel.swift */; };
 		CBE6F5902DC0C5BC00AB1F50 /* NewProductsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE6F58F2DC0C5B700AB1F50 /* NewProductsViewModel.swift */; };
+		CBE83FF42DD1E13F00AA6634 /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBE83FF32DD1E13800AA6634 /* KeychainService.swift */; };
 		D1A2573FA700053EEAA24A53 /* StarbucksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16ECEB5D0F34EF9C840BDCFE /* StarbucksTests.swift */; };
 		D3A23C92BE35D685261E9247 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E062A9B6A6B83479FD97A446 /* ContentView.swift */; };
 /* End PBXBuildFile section */
@@ -120,6 +130,9 @@
 		A613796A95A93232D997903C /* StarbucksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarbucksApp.swift; sourceTree = "<group>"; };
 		C0AF9A8E77F4EB5960EDF4E1 /* StarbucksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StarbucksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB1311772D9FCD2700A5EB16 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		CB2DD8AE2DDB3E35007D7A67 /* secret.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = secret.xcconfig; sourceTree = "<group>"; };
+		CB2DD8AF2DDB3FD1007D7A67 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		CB2DD8B12DDB40E0007D7A67 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		CB5999B62DA1039000E5000C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CB5999B82DA103D000E5000C /* RecoMenuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoMenuModel.swift; sourceTree = "<group>"; };
 		CB5999BA2DA103D900E5000C /* RecoMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoMenuViewModel.swift; sourceTree = "<group>"; };
@@ -156,6 +169,9 @@
 		CB9844862DBFB0F400203980 /* AllProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllProductViewModel.swift; sourceTree = "<group>"; };
 		CB9844882DBFDBC100203980 /* BestItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestItemModel.swift; sourceTree = "<group>"; };
 		CB98448A2DBFDBDE00203980 /* BestItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestItemViewModel.swift; sourceTree = "<group>"; };
+		CBAA0D1D2DD9D93100B80E7C /* KeyChainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainKey.swift; sourceTree = "<group>"; };
+		CBAA0D1F2DD9E2FD00B80E7C /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		CBAA0D2C2DDA4D0600B80E7C /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		CBAAF5CC2DC127D500F3CDAA /* EReciptView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EReciptView.swift; sourceTree = "<group>"; };
 		CBB3A3AA2D8FCD6C00AAC118 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		CBB3A3AB2D8FCD6C00AAC118 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
@@ -182,6 +198,7 @@
 		CBE0D6A02DC3D61200286BAC /* PerformOCR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformOCR.swift; sourceTree = "<group>"; };
 		CBE6F58D2DC0C59F00AB1F50 /* NewProductsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductsModel.swift; sourceTree = "<group>"; };
 		CBE6F58F2DC0C5B700AB1F50 /* NewProductsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProductsViewModel.swift; sourceTree = "<group>"; };
+		CBE83FF32DD1E13800AA6634 /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		DEB8C9B080F58BA7914EFACA /* TuistBundle+Starbucks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+Starbucks.swift"; sourceTree = "<group>"; };
 		E062A9B6A6B83479FD97A446 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EB1215644AD9AC027B69D132 /* Starbucks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Starbucks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +211,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBAA0D2B2DDA1CEF00B80E7C /* KakaoSDKUser in Frameworks */,
+				CBAA0D272DDA1CDA00B80E7C /* KakaoSDKCommon in Frameworks */,
+				CBAA0D242DDA195400B80E7C /* Alamofire in Frameworks */,
+				CBAA0D292DDA1CEF00B80E7C /* KakaoSDKAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +260,9 @@
 		7114DBD29435DE5AD4F6FE7D = {
 			isa = PBXGroup;
 			children = (
+				CB2DD8AE2DDB3E35007D7A67 /* secret.xcconfig */,
 				9E238C38CE2CA5E36B56681F /* Project */,
+				CBAA0D222DDA195400B80E7C /* Frameworks */,
 				4F915776ACFB7833710EA338 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -256,6 +279,7 @@
 		9E238C38CE2CA5E36B56681F /* Project */ = {
 			isa = PBXGroup;
 			children = (
+				CB2DD8B12DDB40E0007D7A67 /* .gitignore */,
 				A43C563675542B6402B67BD6 /* Derived */,
 				A02519338BFBC09EE92A3256 /* Starbucks */,
 			);
@@ -265,6 +289,7 @@
 		A02519338BFBC09EE92A3256 /* Starbucks */ = {
 			isa = PBXGroup;
 			children = (
+				CBAA0D302DDA4D2700B80E7C /* Dto */,
 				CBE0D69D2DC3D47000286BAC /* Utils */,
 				30268A7B4514E5866BBB42D1 /* Resources */,
 				F3721401388BBE4C179006C6 /* Sources */,
@@ -298,8 +323,24 @@
 			isa = PBXGroup;
 			children = (
 				CB6A68422DC8F5BE00B33B28 /* OrderViewEnums.swift */,
+				CB2DD8AF2DDB3FD1007D7A67 /* Config.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		CBAA0D222DDA195400B80E7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBAA0D302DDA4D2700B80E7C /* Dto */ = {
+			isa = PBXGroup;
+			children = (
+				CBAA0D2C2DDA4D0600B80E7C /* LoginResponse.swift */,
+			);
+			path = Dto;
 			sourceTree = "<group>";
 		};
 		CBB3A3B42D8FCD6C00AAC118 /* Fonts */ = {
@@ -342,6 +383,7 @@
 		CBB3A3E12D8FD12600AAC118 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CBAA0D1F2DD9E2FD00B80E7C /* AuthViewModel.swift */,
 				CB5CAF3F2DD0954C00DFA939 /* MapViewModel.swift */,
 				CBD1718F2DC9DFF0003B3B8D /* StoreViewModel.swift */,
 				CB6A68462DC90ED600B33B28 /* OrderMenuViewModel.swift */,
@@ -367,9 +409,9 @@
 				CB7C0CF52DD0CCE600CEA4BF /* CustomMap.swift */,
 				CBD171892DC9CF0C003B3B8D /* OrderSheetView.swift */,
 				CB6A683E2DC8F46500B33B28 /* OrderView.swift */,
+				CB599A132DA18E5700E5000C /* MenuDetailView.swift */,
 				CBAAF5CC2DC127D500F3CDAA /* EReciptView.swift */,
 				CB98447E2DBF838800203980 /* ShopView.swift */,
-				CB599A132DA18E5700E5000C /* MenuDetailView.swift */,
 				CB599A0A2DA17D8E00E5000C /* AdCard.swift */,
 				CB599A042DA13D5C00E5000C /* CircleImageCard.swift */,
 				CB5999BC2DA108F500E5000C /* StarGaugeView.swift */,
@@ -389,6 +431,8 @@
 		CBE0D69D2DC3D47000286BAC /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				CBAA0D1D2DD9D93100B80E7C /* KeyChainKey.swift */,
+				CBE83FF32DD1E13800AA6634 /* KeychainService.swift */,
 				CB5CAF202DD08F3E00DFA939 /* LocationManager.swift */,
 				CB6A684A2DC925CB00B33B28 /* CameraPicker.swift */,
 				CBE0D6A02DC3D61200286BAC /* PerformOCR.swift */,
@@ -454,6 +498,10 @@
 			);
 			name = Starbucks;
 			packageProductDependencies = (
+				CBAA0D232DDA195400B80E7C /* Alamofire */,
+				CBAA0D262DDA1CDA00B80E7C /* KakaoSDKCommon */,
+				CBAA0D282DDA1CEF00B80E7C /* KakaoSDKAuth */,
+				CBAA0D2A2DDA1CEF00B80E7C /* KakaoSDKUser */,
 			);
 			productName = Starbucks;
 			productReference = EB1215644AD9AC027B69D132 /* Starbucks.app */;
@@ -465,7 +513,7 @@
 		EA6D4E0F3ACA33D480EC57FF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = YES;
+				BuildIndependentTargetsInParallel = NO;
 				TargetAttributes = {
 					22C72AAC1193AAF83D53E80C = {
 						TestTargetID = D401A5A43FE1CE8FBA6FEA06;
@@ -481,6 +529,10 @@
 				en,
 			);
 			mainGroup = 7114DBD29435DE5AD4F6FE7D;
+			packageReferences = (
+				CBAA0D212DDA194000B80E7C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				CBAA0D252DDA1B1400B80E7C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+			);
 			productRefGroup = 4F915776ACFB7833710EA338 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -497,6 +549,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBB3A3B52D8FCD6C00AAC118 /* Pretendard-Regular.otf in Resources */,
+				CB2DD8B22DDB40E7007D7A67 /* .gitignore in Resources */,
 				CBB3A3B62D8FCD6C00AAC118 /* Pretendard-Bold.otf in Resources */,
 				CBB3A3B72D8FCD6C00AAC118 /* Pretendard-SemiBold.otf in Resources */,
 				CBB3A3B82D8FCD6C00AAC118 /* Pretendard-Medium.otf in Resources */,
@@ -540,6 +593,8 @@
 				CB7552452D98536E003FF4C7 /* TabView.swift in Sources */,
 				CB5CAF212DD08F4500DFA939 /* LocationManager.swift in Sources */,
 				76D5FF2B9CC3995368A0A37A /* TuistAssets+Starbucks.swift in Sources */,
+				CBAA0D2D2DDA4D0C00B80E7C /* LoginResponse.swift in Sources */,
+				CBE83FF42DD1E13F00AA6634 /* KeychainService.swift in Sources */,
 				CBE0D68C2DC3D08400286BAC /* EReceiptViewModel.swift in Sources */,
 				CB7552492D9869EE003FF4C7 /* OtherView.swift in Sources */,
 				CB9844852DBFB0EE00203980 /* AllProductModel.swift in Sources */,
@@ -556,6 +611,7 @@
 				CB599A072DA1733C00E5000C /* AdModel.swift in Sources */,
 				CB599A092DA17A7C00E5000C /* AdViewModel.swift in Sources */,
 				CBE0D6A12DC3D61A00286BAC /* PerformOCR.swift in Sources */,
+				CBAA0D202DD9E30300B80E7C /* AuthViewModel.swift in Sources */,
 				CB7E9DF62D98E06E00F42F9C /* CustomButtonView.swift in Sources */,
 				CB7C0CF62DD0CCEB00CEA4BF /* CustomMap.swift in Sources */,
 				CBD1718E2DC9DF8F003B3B8D /* StoreFeature.swift in Sources */,
@@ -564,7 +620,9 @@
 				CB1311782D9FCD3500A5EB16 /* CustomNavigationBar.swift in Sources */,
 				CB599A162DA18ECA00E5000C /* MenuDetailModel.swift in Sources */,
 				CB599A0D2DA1839500E5000C /* DessertMenuModel.swift in Sources */,
+				CBAA0D1E2DD9D93400B80E7C /* KeyChainKey.swift in Sources */,
 				CB7C0CF82DD0DF2D00CEA4BF /* SearchStoreView.swift in Sources */,
+				CB2DD8B02DDB3FD3007D7A67 /* Config.swift in Sources */,
 				CBB3A3BE2D8FCD6C00AAC118 /* Font.swift in Sources */,
 				CB6A68432DC8F5CA00B33B28 /* OrderViewEnums.swift in Sources */,
 				CB5999BB2DA103DE00E5000C /* RecoMenuViewModel.swift in Sources */,
@@ -634,6 +692,7 @@
 		};
 		555CC03C3DAA5F910D290569 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB2DD8AE2DDB3E35007D7A67 /* secret.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -744,6 +803,7 @@
 		};
 		AA9926B2212A83643CF3BC01 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB2DD8AE2DDB3E35007D7A67 /* secret.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -852,6 +912,48 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CBAA0D212DDA194000B80E7C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.2;
+			};
+		};
+		CBAA0D252DDA1B1400B80E7C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.24.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CBAA0D232DDA195400B80E7C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CBAA0D212DDA194000B80E7C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		CBAA0D262DDA1CDA00B80E7C /* KakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CBAA0D252DDA1B1400B80E7C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCommon;
+		};
+		CBAA0D282DDA1CEF00B80E7C /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CBAA0D252DDA1B1400B80E7C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		CBAA0D2A2DDA1CEF00B80E7C /* KakaoSDKUser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CBAA0D252DDA1B1400B80E7C /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKUser;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EA6D4E0F3ACA33D480EC57FF /* Project object */;
 }

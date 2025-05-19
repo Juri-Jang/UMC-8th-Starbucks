@@ -6,11 +6,16 @@
 //
 
 import SwiftUI
+import KakaoSDKCommon
+import KakaoSDKAuth
+import KakaoSDKUser
+import Alamofire
 
 public struct LoginView: View{
-    @StateObject private var LoginviewModel = LoginViewModel()
+    @StateObject private var loginviewModel = LoginViewModel()
     @FocusState private var focusedField: Field?
-    @AppStorage("isLogin") private var isLoginSuccess = false
+    @Binding var isLoginSuccess: Bool
+    @Binding var userEmail: String
     
     enum Field: Hashable {
             case id
@@ -30,7 +35,7 @@ public struct LoginView: View{
             }
             .padding(.horizontal, 19)
             .navigationDestination(isPresented: $isLoginSuccess) {
-                CustomTabView()
+                CustomTabView(isLoginSuccess: $isLoginSuccess, email: loginviewModel.email)
             }
         }
     }
@@ -64,7 +69,7 @@ public struct LoginView: View{
                     .font(.mainTextRegular13)
                     .foregroundStyle(Color("gray05"))
                     .frame(maxWidth: .infinity, alignment: .leading)
-            TextField("", text: $LoginviewModel.email )
+            TextField("", text: $loginviewModel.email )
                 .focused($focusedField, equals: .id)
                 .overlay(
                     Rectangle()
@@ -80,7 +85,7 @@ public struct LoginView: View{
                 .font(.mainTextRegular13)
                 .foregroundStyle(Color("gray05"))
                 .frame(maxWidth: .infinity, alignment: .leading)
-            SecureField("", text: $LoginviewModel.password)
+            SecureField("", text: $loginviewModel.password)
                 .focused($focusedField, equals: .password)
                 .overlay(
                     Rectangle()
@@ -96,7 +101,9 @@ public struct LoginView: View{
             ZStack {
                 Button(action: {
                     print("로그인 시도")
-                    if LoginviewModel.loginSuccess() {
+                    if loginviewModel.loginSuccess() {
+                        userEmail = loginviewModel.email
+                        print("로그인 성공! 전달하는 이메일: \(userEmail)")
                         isLoginSuccess = true
                         print("로그인 성공")
                     } else {
@@ -129,8 +136,37 @@ public struct LoginView: View{
 
             Spacer().frame(height: 19)
                 
-            Image(.kakaoLogin)
-                
+            Button(action: {
+                // 카카오 로그인 시도
+                if UserApi.isKakaoTalkLoginAvailable() { //카카오톡이 설치 되어있다면 카톡으로 연결
+                    UserApi.shared.loginWithKakaoTalk { (oauthToken, error) in //카카오 서버에 액세스 토큰 요청
+                        if let error = error {
+                            print("카카오톡 로그인 실패: \(error)")
+                        } else {
+                            if let token = oauthToken?.accessToken {
+                                loginviewModel.sendTokenToBackend(token: token)
+                            }
+                            isLoginSuccess = true
+                            print("카카오톡 로그인 성공")
+                        }
+                    }
+                } else {
+                    UserApi.shared.loginWithKakaoAccount { (oauthToken, error) in // 아니면 웹 로그인으로 연결
+                        if let error = error {
+                            print("카카오 계정 로그인 실패: \(error)")
+                        } else {
+                            if let token = oauthToken?.accessToken {
+                                loginviewModel.sendTokenToBackend(token: token)
+                            }
+                            isLoginSuccess = true
+                            print("카카오 계정 로그인 성공")
+                        }
+                    }
+                }
+            }) {
+                Image(.kakaoLogin)
+            }
+            
             Spacer().frame(height: 19)
                 
             Image(.appleLogin)
@@ -140,15 +176,17 @@ public struct LoginView: View{
 }
 
 
-struct LoginView_Preview: PreviewProvider {
 
-    static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
-        
-    static var previews: some View {
-        ForEach(devices, id: \.self) { device in
-            LoginView()
-                .previewDevice(PreviewDevice(rawValue: device))
-                .previewDisplayName(device)
-        }
-    }
-}
+//
+//struct LoginView_Preview: PreviewProvider {
+//
+//    static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
+//        
+//    static var previews: some View {
+//        ForEach(devices, id: \.self) { device in
+//            LoginView()
+//                .previewDevice(PreviewDevice(rawValue: device))
+//                .previewDisplayName(device)
+//        }
+//    }
+//}

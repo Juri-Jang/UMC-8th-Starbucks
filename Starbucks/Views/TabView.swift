@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct CustomTabView: View {
-        @State var selectedTab : Int = 0
-        @AppStorage("isLogin") private var isLoginSuccess = false
-        
+    @Binding var isLoginSuccess: Bool
+    var email: String
+    @State private var selectedTab = 0
+    
         var body: some View {
             NavigationStack {
                 TabView(selection: $selectedTab) {
-                    Tab(value: 0, content: { HomeView() }, label: {
+                    Tab(value: 0, content: {HomeView(isLoginSuccess: $isLoginSuccess, email: email)}, label: {
                         VStack {
                             Image("home")
                             Text("Home")
@@ -38,7 +39,7 @@ struct CustomTabView: View {
                             Text("Shop")
                         }
                     })
-                    Tab(value: 4, content: { OtherView(isLoginSuccess: $isLoginSuccess) }, label: {
+                    Tab(value: 4, content: { OtherView(isLoginSuccess: $isLoginSuccess, email: email) }, label: {
                         VStack {
                             Image("other")
                             Text("Other")
@@ -53,16 +54,16 @@ struct CustomTabView: View {
 
     }
 
-    struct CustomTabView_Preview: PreviewProvider {
-
-        static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
-        
-        
-        static var previews: some View {
-            ForEach(devices, id: \.self) { device in
-                CustomTabView()
-                    .previewDevice(PreviewDevice(rawValue: device))
-                    .previewDisplayName(device)
-            }
-        }
-    }
+//    struct CustomTabView_Preview: PreviewProvider {
+//
+//        static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
+//        
+//        
+//        static var previews: some View {
+//            ForEach(devices, id: \.self) { device in
+//                CustomTabView()
+//                    .previewDevice(PreviewDevice(rawValue: device))
+//                    .previewDisplayName(device)
+//            }
+//        }
+//    }

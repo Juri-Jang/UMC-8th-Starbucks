@@ -9,7 +9,8 @@ import SwiftUI
 
 struct OtherView: View{
     @Binding var isLoginSuccess: Bool
-    @StateObject private var signupViewModel = SignupViewModel()
+    @StateObject private var viewModel = OtherViewModel()
+    var email: String
     
     var body: some View {
         NavigationStack {
@@ -30,11 +31,18 @@ struct OtherView: View{
                     }
                 }
                 .background(Color("white01"))
+                .onAppear {
+                    if !email.isEmpty {
+                        viewModel.getNickname(email: email)
+                    } else {
+                        viewModel.nickname = "작성한 닉네임"
+                    }
+                }
+
+                .navigationBarBackButtonHidden(true)
             }
-            .navigationBarBackButtonHidden(true)
         }
     }
-
     
     private var navigationBar: some View{
         HStack{
@@ -58,7 +66,7 @@ struct OtherView: View{
     private var TextGoup: some View{
         VStack{
             HStack{
-                Text(signupViewModel.storedNickname != "" ? "\(signupViewModel.storedNickname)" : "(작성한 닉네임) ")
+                Text(viewModel.nickname.isEmpty ? "(작성한 닉네임)" : viewModel.nickname)
                     .foregroundStyle(Color("green01"))
                     .font(.mainTextSemibold24)
                 Text("님")
@@ -155,16 +163,16 @@ struct OtherView: View{
     }
 }
 
-struct OtherView_Preview: PreviewProvider {
-
-    static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
-    @State static var isLogin = true
-    
-    static var previews: some View {
-        ForEach(devices, id: \.self) { device in
-            OtherView(isLoginSuccess: $isLogin)
-                .previewDevice(PreviewDevice(rawValue: device))
-                .previewDisplayName(device)
-        }
-    }
-}
+//struct OtherView_Preview: PreviewProvider {
+//
+//    static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
+//    @State static var isLogin = true
+//    
+//    static var previews: some View {
+//        ForEach(devices, id: \.self) { device in
+//            OtherView(isLoginSuccess: $isLogin)
+//                .previewDevice(PreviewDevice(rawValue: device))
+//                .previewDisplayName(device)
+//        }
+//    }
+//}

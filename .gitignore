@@ -1,0 +1,17 @@
+# 비밀키
+Secrets.plist
+secret.xcconfig
+
+# Xcode
+build/
+Derived/
+*.xcworkspace
+*.xcuserstate
+
+# macOS
+.DS_Store
+
+# SwiftPM
+.swiftpm/
+
+mise.toml
